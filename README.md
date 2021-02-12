@@ -1,135 +1,39 @@
-This project was bootstrapped with [Create Eth App](https://github.com/paulrberg/create-eth-app).
+# prana:
 
-## Project Structure
 
-The default template is a monorepo created with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
+## Build Setup
 
-Workspaces makes it possible to setup multiple packages in such a way that we only need to run `yarn install` once to install all of them in
-a single pass. Dependencies are hoisted at the root.
+```bash
+# install dependencies
+$ npm install
 
-```
-my-eth-app
-├── README.md
-├── node_modules
-├── package.json
-├── .gitignore
-└── packages
-    ├── contracts
-    │   ├── README.json
-    │   ├── package.json
-    │   └── src
-    │       ├── abis
-    │       │   ├── erc20.json
-    │       │   └── ownable.json
-    │       ├── addresses.js
-    │       └── index.js
-    ├── react-app
-    │   ├── README.md
-    │   ├── node_modules
-    │   ├── package.json
-    │   ├── public
-    │   │   ├── favicon.ico
-    │   │   ├── index.html
-    │   │   ├── logo192.png
-    │   │   ├── logo512.png
-    │   │   ├── manifest.json
-    │   │   └── robots.txt
-    │   └── src
-    │       ├── App.css
-    │       ├── App.js
-    │       ├── App.test.js
-    │       ├── ethereumLogo.svg
-    │       ├── index.css
-    │       ├── index.js
-    │       ├── serviceWorker.js
-    │       └── setupTests.js
-    └── subgraph
-        ├── README.md
-        ├── abis
-        │   └── erc20.json
-        ├── package.json
-        ├── schema.graphql
-        ├── src
-        │   └── mappings
-        │       ├── tokens.ts
-        │       └── transfers.ts
-        └── subgraph.yaml
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# build for production and launch server
+$ npm run build
+$ npm run start
+
+# generate static project
+$ npm run generate
 ```
 
-Owing to this dependency on Yarn Workspaces, Create Eth App can't be used with npm.
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Digital Content Distribution using NFTs
 
-### React App
+We humans have a unique way of adding value to entities just by interacting with it: a particular DVD of Star Wars once owned by Mark Hamill fetches more than its MRP (Maximum Retail Price), you attach sentimental value to the watch that your dad gave you (so much so that you’re not willing to part with it for any sum of money). This level of interaction and sentiment-attachment is only
+possible in the physical realm, precisely because there is no uniqueness attached with digital copies. Until the advent of blockchain and Non-Fungible Tokens.
 
-#### `yarn react-app:start`
+With NFTs, suddenly we’re able to hold unique digital collectibles, attach sentimental value to it, and have a history associated with it. But they don’t just have to be collectibles. They can be utilitarian entities, just like the watch that you wear to tell time. Here we propose such a platform for utilitarian non-fungible tokens: for digital content.
 
-Runs the React app in development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will automatically reload if you make changes to the code.<br>
-You will see the build errors and lint warnings in the console.
+All forms of digital content (movies, e-books, tv series, comics, music, games, etc.) can be distributed on the platform, but we’ll concentrate on e-books for simplicity and scope of this project.
 
-#### `yarn react-app:test`
+A unique NFT is generated and assigned to an owner when an e-book sale is executed. And since these tokens are unique, they behave like physical entities, i.e. as physical copies of a book. This means that there are a whole new set of behaviors that opens up for the owner, which doesn’t exist in any of the current content distribution platforms.An owner can sell or rent the book as she pleases, for the price that she chooses, to anyone in the globe.
 
-Runs the React test watcher in an interactive mode.<br>
-By default, runs tests related to files changed since the last commit.
+The books will have the history of its previous owners as it jumps from hand to hand, and it becomes verifiable to all whether one particular copy of Harry Potter was once owned by Emma Watson or not. Limited editions and other collectible characteristics can also be incorporated into the tokens to sell them at a premium.
 
-[Read more about testing React.](https://facebook.github.io/create-react-app/docs/running-tests)
+A whole new market gets opened up with this, while providing increased freedom and control to the customers. The platform is designed in such a way that each monetary transaction attached to a particular e-book copy results in a percentage of that transaction value being sent to the content creator/author, incentivizing their participation on the platform. Thus, both content creators and consumers are incentivized to be on the platform. The supply would always be limited, as new NFTs are only generated at the time of an e-book sale from the author/publisher, hence ensuring digital scarcity. We believe a free-market economics model would drive down the prices of resales and rentals, making it affordable for the Third World (or people in Levels 1 to 3) and other emerging markets, nudging people away from piracy.
 
-#### `yarn react-app:build`
-
-Builds the React app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the React documentation on [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-#### `yarn react-app:eject`
-
-**Note: this is a one-way operation. Once you `react-app:eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` the React app at any time. This command will
-remove the single build dependency from your React package.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right
-into the `react-app` package so you have full control over them. All of the commands except `react-app:eject` will still work,
-but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `react-app:eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-### Subgraph
-
-The Graph is a tool for for indexing events emitted on the Ethereum blockchain. It provides you with an easy-to-use GraphQL API. <br/>
-
-To learn more, check out the [The Graph documentation](https://thegraph.com/docs).
-
-#### `yarn subgraph:codegen`
-
-Generates AssemblyScript types for smart contract ABIs and the subgraph schema.
-
-#### `yarn subgraph:build`
-
-Compiles the subgraph to WebAssembly.
-
-#### `yarn subgraph:auth`
-
-Before deploying your subgraph, you need to sign up on the
-[Graph Explorer](https://thegraph.com/explorer/). There, you will be given an access token. Drop it in the command
-below:
-
-```sh
-GRAPH_ACCESS_TOKEN=your-access-token-here yarn subgraph:auth
-```
-
-#### `yarn subgraph:deploy`
-
-Deploys the subgraph to the official Graph Node.<br/>
-
-Replace `paulrberg/create-eth-app` in the package.json script with your subgraph's name.
-
-You may also want to [read more about the hosted service](https://thegraph.com/docs/quick-start#hosted-service).
