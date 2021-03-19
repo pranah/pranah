@@ -1,12 +1,15 @@
 <template>
-  <section class="container">
-    <div>
-      <!-- <img class="logo" height="70" src="~/assets/pranaFinalLogo.svg" alt="logo"> -->
-      <!-- <h1 class="title">
-        WELCOME
-      </h1> -->
-        <Welcome v-if="currentAccount != null"/>
-              <Login v-else />   
+<div>
+  <div v-if="currentAccount != null">
+  <MyProfile v-if="clickedAt == 0"/>
+  <Publisher v-else-if="clickedAt == 1"/>
+  <MarketPlace v-else-if="clickedAt == 2"/>
+  <About v-else-if="clickedAt == 4"/>
+  </div>
+  <section class="container" v-else >
+    <div >
+        <!-- <Welcome v-if="currentAccount != null"/> -->
+              <Login />   
             <p class="subtitle"> 
             eBook Publishing Using NFTs <br> <br>
 
@@ -17,6 +20,12 @@
               <p class = 'tag'>(MetaMask needs to be connected to Ropsten Test Network)</p>
       </div>
   </section>
+
+</div>
+
+
+  
+  
 </template>
 
 <script>
@@ -25,7 +34,8 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState('web3', [
-      'currentAccount'
+      'currentAccount',
+      'clickedAt'
     ])
   },
 }
@@ -38,7 +48,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-   background-color: #ECEFF1;
+   /* background-color: #ECEFF1; */
 }
 
 .title {

@@ -1,4 +1,10 @@
 {
+  "About": {
+    "description": "Auto imported from components/About.vue"
+  },
+  "LazyAbout": {
+    "description": "Auto imported from components/About.vue"
+  },
   "AnnotationDialog": {
     "description": "Auto imported from components/AnnotationDialog.vue"
   },
@@ -41,11 +47,23 @@
   "LazyLogin": {
     "description": "Auto imported from components/Login.vue"
   },
+  "MarketPlace": {
+    "description": "Auto imported from components/MarketPlace.vue"
+  },
+  "LazyMarketPlace": {
+    "description": "Auto imported from components/MarketPlace.vue"
+  },
   "MyCopy": {
     "description": "Auto imported from components/MyCopy.vue"
   },
   "LazyMyCopy": {
     "description": "Auto imported from components/MyCopy.vue"
+  },
+  "MyProfile": {
+    "description": "Auto imported from components/MyProfile.vue"
+  },
+  "LazyMyProfile": {
+    "description": "Auto imported from components/MyProfile.vue"
   },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
@@ -70,6 +88,12 @@
   },
   "LazyPublished": {
     "description": "Auto imported from components/Published.vue"
+  },
+  "Publisher": {
+    "description": "Auto imported from components/Publisher.vue"
+  },
+  "LazyPublisher": {
+    "description": "Auto imported from components/Publisher.vue"
   },
   "RentDialog": {
     "description": "Auto imported from components/RentDialog.vue"

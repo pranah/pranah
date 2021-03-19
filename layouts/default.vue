@@ -4,7 +4,7 @@
 </div> -->
   <v-app >
     <div>
-        <Navbar />
+        <!-- <Navbar /> -->
             <!-- <v-navigation-drawer
       expand-on-hover
       dark
@@ -61,42 +61,36 @@
           class="navlist"
         >
        
-          <v-list-item link>
-            <v-list-item-icon>
-              <v-icon x-large>mdi-folder</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>My Files</v-list-item-title>
-          </v-list-item>
           <v-divider></v-divider>
-            <v-list-item link>
-            <v-list-item-icon>
-              <v-icon x-large>mdi-pen</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Publish new Book</v-list-item-title>
-          </v-list-item>
-          <v-divider></v-divider>
-          <v-list-item link>
+          <v-list-item link @click="setClickedAt(0)">
             <v-list-item-icon>
               <v-icon x-large>mdi-account</v-icon>
             </v-list-item-icon>
             <v-list-item-title>My Profile</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
-          <v-list-item link>
+            <v-list-item link @click="setClickedAt(1)">
+            <v-list-item-icon>
+              <v-icon x-large>mdi-pen</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Publish</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
+          <v-list-item link @click="setClickedAt(2)">
             <v-list-item-icon>
               <v-icon x-large>mdi-shopping</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Marketplace</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
-                    <v-list-item link>
+            <v-list-item link @click="setClickedAt(3)">
             <v-list-item-icon>
               <v-icon x-large>mdi-google-circles-extended</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Community</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
-                    <v-list-item link>
+            <v-list-item link @click="setClickedAt(4)">
             <v-list-item-icon>
               <v-icon x-large>mdi-information</v-icon>
             </v-list-item-icon>
@@ -134,7 +128,7 @@
 
 <script>
 import Navbar from '@/components/Navbar'
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapMutations } from 'vuex'
 
 export default {
   data () {
@@ -159,11 +153,20 @@ export default {
   components: {
     Navbar
   },
+  computed: {
+    ...mapState('web3',[
+      'clickedAt'
+    ])
+  },
   methods: {
       ...mapActions({
         fetchProvider: 'web3/fetchProvider',
         getAccount: 'web3/getAccount',
-      })
+      }),
+      ...mapMutations('web3',[
+      'publisherPageSwitchFlip',
+      'setClickedAt'
+    ])
   },
   created() {
     this.fetchProvider();
