@@ -95,6 +95,12 @@
   "LazyPublisher": {
     "description": "Auto imported from components/Publisher.vue"
   },
+  "ReadPage": {
+    "description": "Auto imported from components/ReadPage.vue"
+  },
+  "LazyReadPage": {
+    "description": "Auto imported from components/ReadPage.vue"
+  },
   "RentDialog": {
     "description": "Auto imported from components/RentDialog.vue"
   },

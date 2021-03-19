@@ -166,7 +166,7 @@ export default {
       ...mapMutations('web3',[
       'publisherPageSwitchFlip',
       'setClickedAt'
-    ])
+    ]),
   },
   created() {
     this.fetchProvider();

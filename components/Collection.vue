@@ -29,9 +29,9 @@
                         <v-col align-self="center">
                         <v-row justify="center">
                             
-                            <nuxt-link to="/readPage">
+                            <!-- <nuxt-link to="/readPage"> -->
                             <v-btn large color="green" @click="requestFile(content, collectedContent.indexOf(content))" >Read</v-btn>
-                            </nuxt-link>
+                            <!-- </nuxt-link> -->
                            
                         </v-row>
                         </v-col>
@@ -79,9 +79,9 @@
                         >
                         READ
                         </v-btn>  -->
-                        <nuxt-link to="/readPage">
+                        <!-- <nuxt-link to="/readPage"> -->
                         <v-btn large color="green" @click="requestFile(content, rentedTokens.indexOf(content))" >Read</v-btn>
-                        </nuxt-link>
+                        <!-- </nuxt-link> -->
                         </div>
                     </v-card-actions> 
                             <div class="middle">
@@ -128,7 +128,12 @@ export default {
         ...mapMutations({
             getFile: 'ipfs/getFile'
         }),
+        ...mapMutations('web3',{
+          setClickedAt: 'setClickedAt'
+        }
+        ),
         requestFile(content, index){
+          this.setClickedAt(5)
             console.log(content)
             console.log(index)
             // this.requestContent(content.bookHash)

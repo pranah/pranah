@@ -5,6 +5,7 @@
   <Publisher v-else-if="clickedAt == 1"/>
   <MarketPlace v-else-if="clickedAt == 2"/>
   <About v-else-if="clickedAt == 4"/>
+  <ReadPage v-else-if="clickedAt == 5"/>
   </div>
   <section class="container" v-else >
     <div >
