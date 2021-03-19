@@ -30,9 +30,13 @@
     </v-navigation-drawer> -->
         
       <v-navigation-drawer
+          src="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
         app
         expand-on-hover
         v-model="sidebar"
+        width="15%"
+        class="navdrawer"
+
       >
          <!-- <v-list>
           <v-list-item class="px-2">
@@ -51,36 +55,61 @@
           </v-list-item>
         </v-list> -->
 
-        <v-divider></v-divider>
 
         <v-list
           nav
-          dense
+          class="navlist"
         >
+       
           <v-list-item link>
             <v-list-item-icon>
-              <v-icon>mdi-folder</v-icon>
+              <v-icon x-large>mdi-folder</v-icon>
             </v-list-item-icon>
             <v-list-item-title>My Files</v-list-item-title>
           </v-list-item>
+          <v-divider></v-divider>
+            <v-list-item link>
+            <v-list-item-icon>
+              <v-icon x-large>mdi-pen</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Publish new Book</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
           <v-list-item link>
             <v-list-item-icon>
-              <v-icon>mdi-account-multiple</v-icon>
+              <v-icon x-large>mdi-account</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Shared with me</v-list-item-title>
+            <v-list-item-title>My Profile</v-list-item-title>
           </v-list-item>
+          <v-divider></v-divider>
           <v-list-item link>
             <v-list-item-icon>
-              <v-icon>mdi-star</v-icon>
+              <v-icon x-large>mdi-shopping</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Starred</v-list-item-title>
+            <v-list-item-title>Marketplace</v-list-item-title>
           </v-list-item>
+          <v-divider></v-divider>
+                    <v-list-item link>
+            <v-list-item-icon>
+              <v-icon x-large>mdi-google-circles-extended</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Community</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
+                    <v-list-item link>
+            <v-list-item-icon>
+              <v-icon x-large>mdi-information</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>About</v-list-item-title>
+          </v-list-item>
+          <v-divider></v-divider>
         </v-list> 
                <v-list>
         <v-list-item
           v-for="([icon, text], i) in items"
           :key="i"
           link
+          class="navlist"
         >
           <v-list-item-icon>
             <v-icon>{{ icon }}</v-icon>
@@ -146,9 +175,17 @@ export default {
 }
 </script>
 <style >
+
   .main{
 background-color: #ECEFF1;
 /* height: 100vh; */
 }
-
+  .navlist{
+    padding: 2px;
+    top: 20%;
+    height: 40px;
+}
+  /* .navdrawer{
+    elevation = "12";
+  } */
 </style>

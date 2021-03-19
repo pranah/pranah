@@ -14,6 +14,8 @@ export { default as RentDialog } from '../../components/RentDialog.vue'
 export { default as RentToken } from '../../components/RentToken.vue'
 export { default as ResaleDialog } from '../../components/ResaleDialog.vue'
 export { default as ResaleToken } from '../../components/ResaleToken.vue'
+export { default as Tab } from '../../components/Tab.vue'
+export { default as Tabs } from '../../components/Tabs.vue'
 export { default as Welcome } from '../../components/Welcome.vue'
 
 export const LazyAnnotationDialog = import('../../components/AnnotationDialog.vue' /* webpackChunkName: "components/AnnotationDialog'}" */).then(c => c.default || c)
@@ -32,4 +34,6 @@ export const LazyRentDialog = import('../../components/RentDialog.vue' /* webpac
 export const LazyRentToken = import('../../components/RentToken.vue' /* webpackChunkName: "components/RentToken'}" */).then(c => c.default || c)
 export const LazyResaleDialog = import('../../components/ResaleDialog.vue' /* webpackChunkName: "components/ResaleDialog'}" */).then(c => c.default || c)
 export const LazyResaleToken = import('../../components/ResaleToken.vue' /* webpackChunkName: "components/ResaleToken'}" */).then(c => c.default || c)
+export const LazyTab = import('../../components/Tab.vue' /* webpackChunkName: "components/Tab'}" */).then(c => c.default || c)
+export const LazyTabs = import('../../components/Tabs.vue' /* webpackChunkName: "components/Tabs'}" */).then(c => c.default || c)
 export const LazyWelcome = import('../../components/Welcome.vue' /* webpackChunkName: "components/Welcome'}" */).then(c => c.default || c)

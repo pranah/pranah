@@ -95,6 +95,18 @@
   "LazyResaleToken": {
     "description": "Auto imported from components/ResaleToken.vue"
   },
+  "Tab": {
+    "description": "Auto imported from components/Tab.vue"
+  },
+  "LazyTab": {
+    "description": "Auto imported from components/Tab.vue"
+  },
+  "Tabs": {
+    "description": "Auto imported from components/Tabs.vue"
+  },
+  "LazyTabs": {
+    "description": "Auto imported from components/Tabs.vue"
+  },
   "Welcome": {
     "description": "Auto imported from components/Welcome.vue"
   },

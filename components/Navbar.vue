@@ -64,13 +64,13 @@ export default {
   right: 30%;
 }
 .logo-prana {
-  position:fixed;
+  position:absolute;
   right: 50%;
 }
 .navbar {
   z-index: 20;
   position: relative;
-  background: #0D47A1;
+  background: #256fdf;
   /* background: #455A64; */
   color: white;
   height: 60px;

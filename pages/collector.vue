@@ -1,8 +1,8 @@
 <template>
-  <!-- <v-layout
-    justify-center
-    align-center
-  > -->
+  <!-- // <v-layout
+  //   justify-center
+  //   align-center
+  // >  -->
   <section class="container">
     <v-flex class="text-center">
         <v-row>
@@ -45,3 +45,4 @@ export default {
 }
 
 </style>
+-->
