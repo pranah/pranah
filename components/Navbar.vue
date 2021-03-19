@@ -68,7 +68,7 @@ export default {
 
 .logo-prana {
   position:absolute;
-  right: 16%;
+  right: 65%;
   
   
 }

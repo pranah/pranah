@@ -26,7 +26,7 @@
         <v-layout row wrap >
             <v-flex class="cards" background-color = "#ffff" xs12 sm6 md4 lg4 v-for="content in collectableContent" :key="collectableContent.indexOf(content)">
               <div class="boxContainer">
-                <v-card width="500" height="550" :elevation="20" class="ma-3" color = "">
+                <v-card width="500" height="550" :elevation="20" class="ma-3 card-style" color = "">
                   <div class="image">
                     <Content v-bind:content="content"/>  
                   </div>
@@ -58,7 +58,7 @@
       </v-tab-item>
       <v-tab-item>
         <v-layout row wrap>
-            <v-flex xs12 sm6 md4 lg4 v-for="content in resaleTokens" :key="resaleTokens.indexOf(content)">
+            <v-flex xs12 sm6 md4 lg4 class="cards" v-for="content in resaleTokens" :key="resaleTokens.indexOf(content)">
               <div class="boxContainer">
                 <v-card max-width="300" :elevation="20" class="ma-3" color = "">
                   <div class="image">
@@ -161,15 +161,19 @@ export default {
   background-color: #0D47A1;
   -moz-text-decoration-color: wheat;
 } */
+.card-style{
+  width:500px;
+}
 .cards {
   align-items: center;
   padding-block: 3%;
   padding-left: 6%;
+  /* width:500px; */
 }
 .boxContainer {
 
   position: relative;
-  width: 50%;
+  width: 80%;
 }
 
 .image {
@@ -213,7 +217,6 @@ export default {
 }
 
 .middleButtons {
-  
   transition: .5s ease;
   opacity: 0;
   position: absolute;

@@ -192,7 +192,7 @@ a {  text-decoration: none}
 .boxContainer {
 
   position: absolute;
-  width: %;
+  width: 80%;
 }
 
 .image {

@@ -86,13 +86,13 @@
             </v-list-item-icon>
             <v-list-item-title>Marketplace</v-list-item-title>
           </v-list-item>
-          <v-divider></v-divider>
+          <!-- <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(3)">
             <v-list-item-icon>
               <v-icon x-large color="navy">mdi-google-circles-extended</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Community</v-list-item-title>
-          </v-list-item>
+          </v-list-item> -->
           <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(4)">
             <v-list-item-icon>
