@@ -1,12 +1,5 @@
 [
   {
-    "name": "about",
-    "path": "/about",
-    "component": "/home/anomaly/Desktop/pranah/pages/about.vue",
-    "chunkName": "pages/about",
-    "_name": "_958ad092"
-  },
-  {
     "name": "collector",
     "path": "/collector",
     "component": "/home/anomaly/Desktop/pranah/pages/collector.vue",

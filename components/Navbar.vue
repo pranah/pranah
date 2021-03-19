@@ -3,11 +3,13 @@
     <v-row>
       <v-col>
     <!-- <img class="logo" height="30" @click="open = !open" src="~/assets/Logo.svg" alt="logo"> -->
+
+          <img class="logo-prana" height="40" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo">
     <!-- <v-spacer></v-spacer> -->
       </v-col>
       <div class="logo">
       <v-col>
-        <img class="logo-prana" height="30"  src="~/assets/Prananav.svg" alt="logo">
+        <!-- <img class="logo-prana" height="30"  src="~/assets/Prananav.svg" alt="logo"> -->
       </v-col>
       </div>
       <div class="links">
@@ -63,17 +65,21 @@ export default {
   position: relative;
   right: 30%;
 }
+
 .logo-prana {
-  position:fixed;
-  right: 50%;
+  position:absolute;
+  right: 16%;
+  
+  
 }
 .navbar {
   z-index: 20;
   position: relative;
-  background: #0D47A1;
+  /* background: #256fdf;   */
   /* background: #455A64; */
   color: white;
   height: 60px;
+  left: 290px;
   padding: 2px;
 }
 .navbar-drawer {

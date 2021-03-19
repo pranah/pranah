@@ -1,6 +1,9 @@
+
 <template>
-<section class="container">
+<!-- <section class="container"> -->
     <v-col>
+      <h1 class="heading">Marketplace</h1>
+        <!-- <center><img class="logo-prana" height="40" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"></center> -->
         <v-tabs
           v-model="tabs"
           centered
@@ -9,6 +12,7 @@
         
         >
           <v-tab
+           class="tabs"
             v-for="title in titles"
             :key="titles.indexOf(title)"
           >
@@ -18,11 +22,11 @@
 
     <v-tabs-items v-model="tabs">
       <v-tab-item>
-        <!-- <div class="cards"> -->
+        
         <v-layout row wrap >
-            <v-flex class="cards" background-color = "#ECEFF1" xs12 sm6 md4 lg4 v-for="content in collectableContent" :key="collectableContent.indexOf(content)">
+            <v-flex class="cards" background-color = "#ffff" xs12 sm6 md4 lg4 v-for="content in collectableContent" :key="collectableContent.indexOf(content)">
               <div class="boxContainer">
-                <v-card max-width="300" :elevation="20" class="ma-3" color = "">
+                <v-card width="500" height="550" :elevation="20" class="ma-3" color = "">
                   <div class="image">
                     <Content v-bind:content="content"/>  
                   </div>
@@ -38,19 +42,19 @@
                         </v-btn> 
                         </div>
                     </v-card-actions>
-                            <div class="middle">
+                            <!-- <div class="middle">
                             <div class="text">
                                 <h1><b>{{content.title}}</b></h1><br>
                                 <b>Price: </b>{{content.price}} ETH<br>
                                 <b>ISBN: </b>{{content.isbn}}<br>
                                 <b>Author: </b>{{content.publisher}}<br>
                             </div>  
-                            </div> 
+                            </div>  -->
                 </v-card>
               </div>
             </v-flex>
         </v-layout>
-        <!-- </div> -->
+
       </v-tab-item>
       <v-tab-item>
         <v-layout row wrap>
@@ -72,15 +76,15 @@
                         </v-btn> 
                         </div>
                     </v-card-actions> 
-                            <div class="middle-resale">
+                            <!-- <div class="middle-resale">
                             <div class="text">
                                 <h1><b>{{content.title}}</b></h1><br>
                                 <b>Resale Price: </b>{{content.resalePrice}} ETH<br>
                                 <b>ISBN: </b>{{content.isbn}}<br>
                                 <b>Copy Number: </b>{{content.copyNumber}}<br><br>
-                                <!-- <b>Author: </b>{{content.publisher}}<br> -->
+                                //<b>Author: </b>{{content.publisher}}<br>
                             </div>  
-                            </div> 
+                            </div>  -->
                 </v-card>
               </div>
             </v-flex>
@@ -106,14 +110,14 @@
                         </v-btn> 
                         </div>
                     </v-card-actions> 
-                            <div class="middle">
+                            <!-- <div class="middle">
                             <div class="text">
                                 <h1><b>{{content.title}}</b></h1><br>
                                 <b>Renting Price: </b>{{content.rentingPrice}} ETH<br>
                                 <b>ISBN: </b>{{content.isbn}}<br>
                                 <b>Copy Number: </b>{{content.copyNumber}}<br><br>
                             </div>  
-                            </div> 
+                            </div>  -->
                 </v-card>
               </div>
             </v-flex>
@@ -121,7 +125,8 @@
       </v-tab-item>
     </v-tabs-items>
     </v-col>
-</section>
+<!-- </section>-->
+
 </template>
 
 <script>
@@ -152,6 +157,10 @@ export default {
 </script>
 
 <style>
+/* .tabs {
+  background-color: #0D47A1;
+  -moz-text-decoration-color: wheat;
+} */
 .cards {
   align-items: center;
   padding-block: 3%;
@@ -238,4 +247,8 @@ export default {
   /* width: 95%; */
   padding: 6px 16px;
 }
-</style>
+</style> 
+
+
+
+

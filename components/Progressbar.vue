@@ -20,7 +20,7 @@ export default {
     }
     .progress-inner {
         height: 100%;
-        background-image: linear-gradient(to right, #2484E4, #44C444);
+        background-color: teal;
         border-radius: 0px 10px 10px 0px;
     }
     .progress-inner.complete {

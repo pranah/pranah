@@ -8,6 +8,7 @@ import ethUtil from 'ethereumjs-util'
 
 export default {
     state: () => ({
+        clickedAt: 0,
         collectorPageSwitch: false,
         publisherPageSwitch: false,
         publishedContent: [],
@@ -28,6 +29,9 @@ export default {
         pranahelperAbi: pranahelperJson.abi,
     }),
     mutations: {
+        setClickedAt: (state, index) => {
+            state.clickedAt = index;
+        },
         publisherPageSwitchFlip: (state, page) => {
             state.publisherPageSwitch = page;
         },
@@ -96,6 +100,7 @@ export default {
         }
     },
     actions: {
+        
         fetchProvider: async ({state, dispatch, commit}) => {
             detectEthereumProvider().then(res => {
                 commit('fetchedProvider', res.isMetaMask)   

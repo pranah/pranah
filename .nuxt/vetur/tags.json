@@ -1,4 +1,10 @@
 {
+  "About": {
+    "description": "Auto imported from components/About.vue"
+  },
+  "LazyAbout": {
+    "description": "Auto imported from components/About.vue"
+  },
   "AnnotationDialog": {
     "description": "Auto imported from components/AnnotationDialog.vue"
   },
@@ -41,11 +47,23 @@
   "LazyLogin": {
     "description": "Auto imported from components/Login.vue"
   },
+  "MarketPlace": {
+    "description": "Auto imported from components/MarketPlace.vue"
+  },
+  "LazyMarketPlace": {
+    "description": "Auto imported from components/MarketPlace.vue"
+  },
   "MyCopy": {
     "description": "Auto imported from components/MyCopy.vue"
   },
   "LazyMyCopy": {
     "description": "Auto imported from components/MyCopy.vue"
+  },
+  "MyProfile": {
+    "description": "Auto imported from components/MyProfile.vue"
+  },
+  "LazyMyProfile": {
+    "description": "Auto imported from components/MyProfile.vue"
   },
   "Navbar": {
     "description": "Auto imported from components/Navbar.vue"
@@ -71,6 +89,18 @@
   "LazyPublished": {
     "description": "Auto imported from components/Published.vue"
   },
+  "Publisher": {
+    "description": "Auto imported from components/Publisher.vue"
+  },
+  "LazyPublisher": {
+    "description": "Auto imported from components/Publisher.vue"
+  },
+  "ReadPage": {
+    "description": "Auto imported from components/ReadPage.vue"
+  },
+  "LazyReadPage": {
+    "description": "Auto imported from components/ReadPage.vue"
+  },
   "RentDialog": {
     "description": "Auto imported from components/RentDialog.vue"
   },
@@ -94,6 +124,18 @@
   },
   "LazyResaleToken": {
     "description": "Auto imported from components/ResaleToken.vue"
+  },
+  "Tab": {
+    "description": "Auto imported from components/Tab.vue"
+  },
+  "LazyTab": {
+    "description": "Auto imported from components/Tab.vue"
+  },
+  "Tabs": {
+    "description": "Auto imported from components/Tabs.vue"
+  },
+  "LazyTabs": {
+    "description": "Auto imported from components/Tabs.vue"
   },
   "Welcome": {
     "description": "Auto imported from components/Welcome.vue"
