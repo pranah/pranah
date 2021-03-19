@@ -1,7 +1,10 @@
 <template>
 <section class="container">
-    <v-col>
-        <h3>Personal Collection</h3>
+  <v-col>
+  <!-- <center><img class="logo-prana" height="40" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"></center> -->
+  
+    
+        <h1 class="heading" >Personal Collection</h1>
         <v-tabs
           v-model="tabs"
           centered
@@ -28,11 +31,11 @@
                         <v-row justify="center">
                         <v-col align-self="center">
                         <v-row justify="center">
-                            
+                            <center>
                             <!-- <nuxt-link to="/readPage"> -->
                             <v-btn large color="green" @click="requestFile(content, collectedContent.indexOf(content))" >Read</v-btn>
                             <!-- </nuxt-link> -->
-                           
+                            </center>
                         </v-row>
                         </v-col>
            
@@ -80,7 +83,9 @@
                         READ
                         </v-btn>  -->
                         <!-- <nuxt-link to="/readPage"> -->
+                        <center>
                         <v-btn large color="green" @click="requestFile(content, rentedTokens.indexOf(content))" >Read</v-btn>
+                        </center>
                         <!-- </nuxt-link> -->
                         </div>
                     </v-card-actions> 
@@ -97,6 +102,38 @@
             </v-flex>
         </v-layout>
       </v-tab-item>
+      <v-tab-item>
+        <v-layout row wrap>
+                <v-flex xs12 sm6 md4 lg4 v-for="content in publishedContent" :key="publishedContent.indexOf(content)">
+                    <div class="boxContainer">
+                    <v-card  max-width="300" :elevation="20" class="ma-3" color = "">
+                        <div class="image">
+                        <Content v-bind:content="content"/> 
+                        </div>
+                        <v-card-actions>
+                            <!-- <v-spacer></v-spacer> -->
+                            <v-row justify="center">
+                            <div class="middleButtons">
+                            <!-- <nuxt-link to="/readPage"> --><center>
+                            <v-btn large color="green" @click="requestFile(content, publishedContent.indexOf(content))" >Read</v-btn>
+                            </center>
+                            <!-- </nuxt-link> -->
+                            </div>
+                            <!-- <div class="middle">
+                            <div class="text">
+                                <h1><b>{{content.title}}</b></h1><br>
+                                <b>Price: </b>{{content.price}} ETH
+                                <b>ISBN: </b>{{content.isbn}}<br>
+                                <b>Author: </b>{{content.publisher}}<br>
+                            </div>  
+                            </div> -->
+                        </v-row>
+                        </v-card-actions>
+                    </v-card>
+                    </div>
+                </v-flex>
+            </v-layout>
+      </v-tab-item>
     </v-tabs-items>
     </v-col>  
 </section>      
@@ -108,12 +145,14 @@ export default {
     data: () => ({
         dialog: false,
         tabs: null,
-        titles: ['MY BOOKS', 'RENTED BOOKS']
+        fileRequested: false,
+        titles: ['MY BOOKS', 'RENTED BOOKS','MY PUBLISHED BOOKS']
     }),
     computed: {
         ...mapState('web3', [
             'collectedContent',
-            'rentedTokens'
+            'rentedTokens',
+            'publishedContent'
         ] ),
         ...mapState('ipfs', [
             'textFile'
@@ -153,7 +192,7 @@ a {  text-decoration: none}
 .boxContainer {
 
   position: absolute;
-  width: 50%;
+  width: %;
 }
 
 .image {
@@ -184,7 +223,7 @@ a {  text-decoration: none}
   
   transition: .5s ease;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -210,6 +249,10 @@ a {  text-decoration: none}
   font-size: 14px;
   /* width: 95%; */
   padding: 6px 16px;
+}
+.heading {
+  font-size: 40px;
+  color: cornflowerblue;
 }
 </style>
 

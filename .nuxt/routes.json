@@ -2,29 +2,29 @@
   {
     "name": "collector",
     "path": "/collector",
-    "component": "/Users/user/Documents/pranah/pages/collector.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/collector.vue",
     "chunkName": "pages/collector",
-    "_name": "_6ad66a3c"
+    "_name": "_2c5267b7"
   },
   {
     "name": "publisher",
     "path": "/publisher",
-    "component": "/Users/user/Documents/pranah/pages/publisher.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/publisher.vue",
     "chunkName": "pages/publisher",
-    "_name": "_2801f02b"
+    "_name": "_2d0424b4"
   },
   {
     "name": "readPage",
     "path": "/readPage",
-    "component": "/Users/user/Documents/pranah/pages/readPage.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/readPage.vue",
     "chunkName": "pages/readPage",
-    "_name": "_1b68f4e6"
+    "_name": "_a3ec47ea"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/user/Documents/pranah/pages/index.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/index.vue",
     "chunkName": "pages/index",
-    "_name": "_7c0300fe"
+    "_name": "_561b1b08"
   }
 ]

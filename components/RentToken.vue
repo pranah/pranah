@@ -7,7 +7,10 @@
         <v-card-text>
             <b>{{content.title}}</b><br>
             <b>Copy Number: </b>  {{content.copyNumber}} <br>
-            <b> Renting Price: </b>{{content.rentingPrice}} ETH
+            <b> Renting Price: </b>{{content.rentingPrice}} ETH<br>
+            <b> ISBN: </b>{{content.isbn}}<br>
+            <!-- <b> Author: </b>{{content.publisher}}  -->
+
         </v-card-text>
     </div>    
 </template>

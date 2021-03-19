@@ -1,10 +1,14 @@
 <template>
-<!-- <div>
-  <Navbar />
-</div> -->
+
+  <!-- <Navbar /> -->
+
   <v-app >
     <div>
-        <!-- <Navbar /> -->
+      <!-- <img class="logo" height="30" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"> -->
+    <div class="nav">
+        <Navbar />
+              <!-- <img class="logo" height="30" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"> -->
+    </div>
             <!-- <v-navigation-drawer
       expand-on-hover
       dark
@@ -64,35 +68,35 @@
           <v-divider></v-divider>
           <v-list-item link @click="setClickedAt(0)">
             <v-list-item-icon>
-              <v-icon x-large>mdi-account</v-icon>
+              <v-icon x-large color="navy">mdi-account-outline</v-icon>
             </v-list-item-icon>
             <v-list-item-title>My Profile</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(1)">
             <v-list-item-icon>
-              <v-icon x-large>mdi-pen</v-icon>
+              <v-icon x-large color="navy">mdi-pen</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Publish</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
           <v-list-item link @click="setClickedAt(2)">
             <v-list-item-icon>
-              <v-icon x-large>mdi-shopping</v-icon>
+              <v-icon x-large color="navy">mdi-shopping</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Marketplace</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(3)">
             <v-list-item-icon>
-              <v-icon x-large>mdi-google-circles-extended</v-icon>
+              <v-icon x-large color="navy">mdi-google-circles-extended</v-icon>
             </v-list-item-icon>
             <v-list-item-title>Community</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(4)">
             <v-list-item-icon>
-              <v-icon x-large>mdi-information</v-icon>
+              <v-icon x-large color="navy">mdi-information</v-icon>
             </v-list-item-icon>
             <v-list-item-title>About</v-list-item-title>
           </v-list-item>
@@ -178,7 +182,9 @@ export default {
 }
 </script>
 <style >
-
+  .nav{
+    z-index: 20;
+  }
   .main{
 background-color: #ECEFF1;
 /* height: 100vh; */
@@ -187,6 +193,10 @@ background-color: #ECEFF1;
     padding: 2px;
     top: 20%;
     height: 40px;
+}
+.logo{
+  top: 10%;
+  position:fixed;
 }
   /* .navdrawer{
     elevation = "12";

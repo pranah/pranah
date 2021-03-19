@@ -1,7 +1,8 @@
 <template>
     <v-row>
         <v-col>  
-            <h3>Publish Work</h3>
+              <!-- <center><img class="logo-prana" height="40" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"></center> -->
+            <h3 class="heading">Publish Work</h3>
             <v-form class="publishForm">
                 <v-text-field 
                     required
