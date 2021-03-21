@@ -198,7 +198,8 @@ background-color: #ECEFF1;
   top: 10%;
   position:fixed;
 }
-  /* .navdrawer{
-    elevation = "12";
-  } */
+  .navdrawer{
+    elevation : "12";
+    z-index: 30;
+  }
 </style>

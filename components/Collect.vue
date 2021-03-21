@@ -26,7 +26,7 @@
         <v-layout row wrap >
             <v-flex class="cards" background-color = "#ffff" xs12 sm6 md4 lg4 v-for="content in collectableContent" :key="collectableContent.indexOf(content)">
               <div class="boxContainer">
-                <v-card width="500" height="550" :elevation="20" class="ma-3 card-style" color = "">
+                <v-card width="300"  :elevation="20" class="ma-3 card-style" color = "">
                   <div class="image">
                     <Content v-bind:content="content"/>  
                   </div>
@@ -270,13 +270,13 @@ export default {
 }
 
 @import url(https://fonts.googleapis.com/css?family=Lato:700);
-/* body {
-  display: flex;
+body {
+  /* display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  align-items: center; */
+  min-height: 50vh;
   background: #f0f0f0;
-} */
+}
 .box {
   position: relative;
   max-width: 600px;

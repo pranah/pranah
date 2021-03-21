@@ -7,9 +7,8 @@
 </head>
 <div class="d-flex flex-column mb-6">
 
-    <v-card
-     
-      >
+
+      
 <h1 class="heading"><center>About Us</center></h1>
   <p class= 'about'>
     We humans have a unique way of adding value to entities just by interacting with it: a particular DVD of Star Wars 
@@ -43,7 +42,7 @@ author/publisher, hence ensuring digital scarcity. We believe a free-market econ
 the prices of resales and rentals, making it affordable for the Third World (or people in Levels 1 to 3) and 
 other emerging markets, nudging people away from piracy.<br><br>
   </p>
-</v-card>
+<!-- </v-card> -->
 </div>
 <!-- <div class="d-flex align-center mb-6">
 <v-card class="pa-2">
@@ -100,10 +99,7 @@ export default {
   align-items: flex-end;
 }
 .about{
-  padding: 8px;
-}
-.about{
-  padding: 100px;
+  padding: 200px;
 }
 /* .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
