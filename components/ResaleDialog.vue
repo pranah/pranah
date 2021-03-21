@@ -19,7 +19,7 @@
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="resalePrice" label="Resale Price" type="number" min = '0' required></v-text-field>
+                <v-text-field v-model="resalePrice" label="Resale Price in ETH"  type="number" min = '0' required></v-text-field>
               </v-col>
             </v-row>
           </v-container>
