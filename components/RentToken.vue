@@ -6,7 +6,7 @@
         ></v-img>
         <v-card-text>
             <b>{{content.title}}</b><br>
-            <b>Copy Number: </b>  {{content.copyNumber}} <br>
+            <!-- <b>Copy Number: </b>  {{content.copyNumber}} <br> -->
             <b> Renting Price: </b>{{content.rentingPrice}} ETH<br>
             <b> ISBN: </b>{{content.isbn}}<br>
             <!-- <b> Author: </b>{{content.publisher}}  -->

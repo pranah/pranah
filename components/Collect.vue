@@ -61,6 +61,7 @@
             <v-flex xs12 sm6 md4 lg4 class="cards" v-for="content in resaleTokens" :key="resaleTokens.indexOf(content)">
               <div class="boxContainer">
                 <v-card max-width="300" :elevation="20" class="ma-3" color = "">
+                <div class="ribbon ribbon-top-left"><span>{{ordinal_suffix_of(content.copyNumber)}} Copy</span></div>
                   <div class="image">
                     <ResaleToken v-bind:content="content"/>  
                   </div>
@@ -95,6 +96,7 @@
             <v-flex xs12 sm6 md4 lg4 class="cards" v-for="content in rentTokens" :key="rentTokens.indexOf(content)">
               <div class="boxContainer">
                 <v-card max-width="300" :elevation="20" class="ma-3" color = "">
+                   <div class="ribbon ribbon-top-left"><span>{{ordinal_suffix_of(content.copyNumber)}} Copy</span></div>
                   <div class="image">
                     <RentToken v-bind:content="content"/>  
                   </div>
@@ -132,6 +134,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 export default {
+  
     computed: {
         ...mapState('web3', [
             'collectableContent',
@@ -146,11 +149,26 @@ export default {
             'buyToken',
             'rentToken'
         ]),
+        ordinal_suffix_of(i) {
+          var j = i % 10,
+          k = i % 100;
+          if (j == 1 && k != 11) {
+            return i + "st";
+          }
+          if (j == 2 && k != 12) {
+            return i + "nd";
+          }
+          if (j == 3 && k != 13) {
+            return i + "rd";
+          }
+        return i + "th";
+          }
     },
     data () {
       return {
         tabs: null,
         titles: ['BUY FROM AUTHOR', 'BUY FROM OTHER READERS','RENT FROM OTHER READERS']
+
       }
     },
 }
@@ -249,6 +267,77 @@ export default {
   font-size: 14px;
   /* width: 95%; */
   padding: 6px 16px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f0f0f0;
+} */
+.box {
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,.1);
+}
+
+/* common */
+.ribbon {
+  z-index: 20;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid #2980b9;
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 225px;
+  padding: 15px 0;
+  background-color: #3498db;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  /* text-transform: uppercase; */
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 0;
+}
+.ribbon-top-left::after {
+  bottom: 0;
+  left: 0;
+}
+.ribbon-top-left span {
+  right: -25px;
+  top: 30px;
+  transform: rotate(-45deg);
 }
 </style> 
 

@@ -2,25 +2,25 @@
   {
     "name": "collector",
     "path": "/collector",
-    "component": "/Users/user/Documents/pranah/pages/collector.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/collector.vue",
     "chunkName": "pages/collector"
   },
   {
     "name": "publisher",
     "path": "/publisher",
-    "component": "/Users/user/Documents/pranah/pages/publisher.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/publisher.vue",
     "chunkName": "pages/publisher"
   },
   {
     "name": "readPage",
     "path": "/readPage",
-    "component": "/Users/user/Documents/pranah/pages/readPage.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/readPage.vue",
     "chunkName": "pages/readPage"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "/Users/user/Documents/pranah/pages/index.vue",
+    "component": "/home/anomaly/Desktop/pranah/pages/index.vue",
     "chunkName": "pages/index"
   }
 ]
