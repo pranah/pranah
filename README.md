@@ -41,4 +41,4 @@ For detailed explanation on how things work, check out [Nuxt.js docs](https://nu
 
 ## Live Demo
 
-Checkout the [live demo here.](https://prana.on.fleek.co)
+Checkout the [live demo here.](https://dark-band-2191.on.fleek.co)
