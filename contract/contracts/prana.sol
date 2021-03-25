@@ -22,14 +22,14 @@ contract prana is ERC721 {
         // edit rentedBlocks to appropriate time/number of blocks before final version
         // for a two-week rental period, the rentedBlocks would be 100800 blocks.
         // assuming the block time is 12 seconds on average.
-        rentedBlocks = 100;
+        // rentedBlocks = 100;
     }
 
     //address of the contract deployer
     address owner;
 
     //rented number of blocks, to count time
-    uint256 rentedBlocks;
+    // uint256 rentedBlocks;
 
     //address of the helper contract
     address pranaHelperAddress;
@@ -91,6 +91,7 @@ contract prana is ERC721 {
         bool isUpForRenting;
         address rentee;
         uint256 rentedAtBlock;
+        uint256 numberOfBlocksToRent;
     }
 
 
@@ -196,6 +197,7 @@ contract prana is ERC721 {
         tokenData[tokenId].copyNumber = booksInfo[_isbn].bookSales;
         tokenData[tokenId].rentee = address(0);
         tokenData[tokenId].rentedAtBlock = 0;
+        tokenData[tokenId].numberOfBlocksToRent = 0;
 
         // the money goes to the plubisher's accountBalance.
         // accountBalance[booksInfo[_isbn].publisherAddress] += msg.value;
@@ -239,7 +241,7 @@ contract prana is ERC721 {
     }
 
     // function to put a copy for renting, ownership doesn't change.
-    function putForRent(uint256 _newPrice, uint256 tokenId) public{
+    function putForRent(uint256 _newPrice, uint256 tokenId, uint256 _rentingTimePeriod) public{
         require(msg.sender == ownerOf(tokenId), "You are not this token's owner");
         require(tokenData[tokenId].isUpForResale == false,
         "Can't put a copy up for renting if it's already on sale!");
@@ -250,6 +252,7 @@ contract prana is ERC721 {
         tokenData[tokenId].rentingPrice = _newPrice;
         tokenData[tokenId].isUpForRenting = true;
         tokenData[tokenId].rentee = address(0);//No one's rented it as of now
+        tokenData[tokenId].numberOfBlocksToRent = _rentingTimePeriod;
         upForRentingTokens.add(tokenId);
         emit TokenForRenting(_newPrice, tokenData[tokenId].isbn, tokenId);
     }
@@ -298,7 +301,7 @@ contract prana is ERC721 {
             }
         }
         else if(tokenData[tokenId].rentee == msg.sender){
-            require(block.number <= tokenData[tokenId].rentedAtBlock + rentedBlocks,
+            require(block.number <= tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
             "Your rental period has expired");
         }
         return booksInfo[tokenData[tokenId].isbn].encryptedBookDataHash;
