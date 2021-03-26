@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16 <0.8.0;
+pragma solidity >=0.4.16 <0.9.0;
 
-import "../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
-import "../../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/utils/Counters.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/token/ERC721/ERC721.sol";
 
 
 //prana main contract.
@@ -212,7 +212,7 @@ contract prana is ERC721 {
         require(tokenData[tokenId].isUpForRenting == false,
         "Can't put a token for sale while it's put for renting");
         require(salePrice >= 0, "Price can't be negative");
-        require(tokenData[tokenId].rentedAtBlock + rentedBlocks < block.number,
+        require(tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent < block.number,
         "The current renting period is not over yet");
         tokenData[tokenId].resalePrice = salePrice;
         tokenData[tokenId].isUpForResale = true;
@@ -246,7 +246,7 @@ contract prana is ERC721 {
         require(tokenData[tokenId].isUpForResale == false,
         "Can't put a copy up for renting if it's already on sale!");
         if(tokenData[tokenId].rentee != address(0)){
-                require(block.number > tokenData[tokenId].rentedAtBlock + rentedBlocks,
+                require(block.number > tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
                 "The renting period is not over yet to put it for renting again");
             }
         tokenData[tokenId].rentingPrice = _newPrice;
@@ -296,7 +296,7 @@ contract prana is ERC721 {
         "You are not authorized to view this copy!");
         if(ownerOf(tokenId) == msg.sender){
             if(tokenData[tokenId].rentee != address(0)){
-                require(block.number > tokenData[tokenId].rentedAtBlock + rentedBlocks,
+                require(block.number > tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
                 "The renting period is not over yet for you to consume the content");
             }
         }
