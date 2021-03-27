@@ -241,7 +241,7 @@ contract prana is ERC721 {
     }
 
     // function to put a copy for renting, ownership doesn't change.
-    function putForRent(uint256 _newPrice, uint256 tokenId, uint256 _rentingTimePeriod) public{
+    function putForRent(uint256 _newPrice, uint256 tokenId, uint256 _numberofBlocksToRent) public{
         require(msg.sender == ownerOf(tokenId), "You are not this token's owner");
         require(tokenData[tokenId].isUpForResale == false,
         "Can't put a copy up for renting if it's already on sale!");
@@ -252,7 +252,7 @@ contract prana is ERC721 {
         tokenData[tokenId].rentingPrice = _newPrice;
         tokenData[tokenId].isUpForRenting = true;
         tokenData[tokenId].rentee = address(0);//No one's rented it as of now
-        tokenData[tokenId].numberOfBlocksToRent = _rentingTimePeriod;
+        tokenData[tokenId].numberOfBlocksToRent = _numberofBlocksToRent;
         upForRentingTokens.add(tokenId);
         emit TokenForRenting(_newPrice, tokenData[tokenId].isbn, tokenId);
     }
