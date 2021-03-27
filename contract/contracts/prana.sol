@@ -330,10 +330,10 @@ contract prana is ERC721 {
     }
     
     //split up from viewTokenDetails, specifically for renting. To avoid Stack Too Deep Error
-    function viewRentingTokenDetails(uint256 _tokenId) public view returns(uint256, string memory, uint256, uint256, uint256, bool) {
+    function viewRentingTokenDetails(uint256 _tokenId) public view returns(uint256, string memory, uint256, uint256, uint256, uint256, bool) {
         require(_exists(_tokenId), "Token doesn't  exist");
         return(tokenData[_tokenId].isbn, booksInfo[tokenData[_tokenId].isbn].unencryptedBookDetailsCID, tokenData[_tokenId].copyNumber,
-        tokenData[_tokenId].rentedAtBlock, tokenData[_tokenId].rentingPrice, tokenData[_tokenId].isUpForRenting);
+        tokenData[_tokenId].rentedAtBlock, tokenData[_tokenId].rentingPrice, tokenData[_tokenId].numberOfBlocksToRent, tokenData[_tokenId].isUpForRenting);
     }
 
     function numberofTokensForResale() public view returns(uint256){
