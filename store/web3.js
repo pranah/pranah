@@ -551,11 +551,12 @@ export default {
             console.log(rentData)
             let rentingPrice = state.web3.utils.toWei(rentData.rentingPrice, 'ether')
             let tokenId = rentData.tokenId
+            let rentingPeriod = rentData.rentingPeriod
             console.log(rentingPrice);
 
             // let rentingPrice = state.web3.utils.toWei(0.5, 'ether')
             // let tokenId = 0
-            await state.pranaContract.methods.putForRent(rentingPrice, tokenId)
+            await state.pranaContract.methods.putForRent(rentingPrice, tokenId, rentingPeriod)
             .send({ from: state.currentAccount, gas : 6000000 })
             .then((receipt) => {
                 console.log('receipt')
@@ -595,7 +596,7 @@ export default {
         //to push a token to the rentTokens array
         pushRentToken: async({state, commit, dispatch}, tokenId) => {
             console.log('executing pushRentToken action...')
-            let isbn, metadataHash, title, imageHash, copyNumber, resalePrice, isUpForResale, rentingPrice, isUpForRenting
+            let isbn, metadataHash, title, imageHash, copyNumber, resalePrice, isUpForResale, rentingPrice, isUpForRenting, rentingPeriod
 
             //contract call to get the token details of a tokenId
             state.pranaContract.methods.viewRentingTokenDetails(tokenId)
@@ -616,8 +617,9 @@ export default {
                     resalePrice = null
                     isUpForResale = null
                     rentingPrice = state.web3.utils.fromWei(content[4], 'ether')
-                    isUpForRenting = content[5]
-                    commit('rentTokens', {tokenId, isbn, metadataHash, title, imageHash, copyNumber, resalePrice, isUpForResale, rentingPrice, isUpForRenting})
+                    rentingPeriod = content[5]
+                    isUpForRenting = content[6]
+                    commit('rentTokens', {tokenId, isbn, metadataHash, title, imageHash, copyNumber, resalePrice, isUpForResale, rentingPrice, isUpForRenting, rentingPeriod})
                 })   
             })
         },

@@ -9,6 +9,7 @@
             <!-- <b>Copy Number: </b>  {{content.copyNumber}} <br> -->
             <b> Renting Price: </b>{{content.rentingPrice}} ETH<br>
             <b> ISBN: </b>{{content.isbn}}<br>
+            <b> Renting Period: </b>{{content.rentingPeriod}} blocks<br>
             <!-- <b> Author: </b>{{content.publisher}}  -->
 
         </v-card-text>

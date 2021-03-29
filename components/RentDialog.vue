@@ -23,6 +23,13 @@
               </v-col>
             </v-row>
           </v-container>
+          <v-container>
+            <v-row>
+              <v-col cols="12">
+                <v-text-field v-model="rentingPeriod" label="Number of blocks" type="number" min = '0' required></v-text-field>
+              </v-col>
+            </v-row>
+          </v-container>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -41,7 +48,8 @@ import { mapState, mapActions } from 'vuex'
 export default {
     data: () => ({
       dialog: false,
-      rentingPrice: null
+      rentingPrice: null,
+      rentingPeriod: null
     }),
     props: ['content'],
     computed: { 
@@ -53,8 +61,9 @@ export default {
         forRent(){
             this.dialog = false
             console.log(this.rentingPrice)
+            console.log("🚀 ~ file: RentDialog.vue ~ line 65 ~ forRent ~ rentingPeriod", this.rentingPeriod)
             console.log(this.content.tokenId)
-            this.putForRent({rentingPrice: this.rentingPrice, tokenId: this.content.tokenId})
+            this.putForRent({rentingPrice: this.rentingPrice, tokenId: this.content.tokenId, rentingPeriod: this.rentingPeriod})
         }
     } 
 }
