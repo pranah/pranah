@@ -1,6 +1,9 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16 <0.8.0;
+pragma solidity >=0.4.16 <0.9.0;
+
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/utils/Counters.sol";
+// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v3.1.0/contracts/token/ERC721/ERC721.sol";
 
 import "../../node_modules/@openzeppelin/contracts/utils/Counters.sol";
 import "../../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -22,14 +25,14 @@ contract prana is ERC721 {
         // edit rentedBlocks to appropriate time/number of blocks before final version
         // for a two-week rental period, the rentedBlocks would be 100800 blocks.
         // assuming the block time is 12 seconds on average.
-        rentedBlocks = 100;
+        // rentedBlocks = 100;
     }
 
     //address of the contract deployer
     address owner;
 
     //rented number of blocks, to count time
-    uint256 rentedBlocks;
+    // uint256 rentedBlocks;
 
     //address of the helper contract
     address pranaHelperAddress;
@@ -91,6 +94,7 @@ contract prana is ERC721 {
         bool isUpForRenting;
         address rentee;
         uint256 rentedAtBlock;
+        uint256 numberOfBlocksToRent;
     }
 
 
@@ -196,6 +200,7 @@ contract prana is ERC721 {
         tokenData[tokenId].copyNumber = booksInfo[_isbn].bookSales;
         tokenData[tokenId].rentee = address(0);
         tokenData[tokenId].rentedAtBlock = 0;
+        tokenData[tokenId].numberOfBlocksToRent = 0;
 
         // the money goes to the plubisher's accountBalance.
         // accountBalance[booksInfo[_isbn].publisherAddress] += msg.value;
@@ -210,7 +215,7 @@ contract prana is ERC721 {
         require(tokenData[tokenId].isUpForRenting == false,
         "Can't put a token for sale while it's put for renting");
         require(salePrice >= 0, "Price can't be negative");
-        require(tokenData[tokenId].rentedAtBlock + rentedBlocks < block.number,
+        require(tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent < block.number,
         "The current renting period is not over yet");
         tokenData[tokenId].resalePrice = salePrice;
         tokenData[tokenId].isUpForResale = true;
@@ -239,17 +244,18 @@ contract prana is ERC721 {
     }
 
     // function to put a copy for renting, ownership doesn't change.
-    function putForRent(uint256 _newPrice, uint256 tokenId) public{
+    function putForRent(uint256 _newPrice, uint256 tokenId, uint256 _numberofBlocksToRent) public{
         require(msg.sender == ownerOf(tokenId), "You are not this token's owner");
         require(tokenData[tokenId].isUpForResale == false,
         "Can't put a copy up for renting if it's already on sale!");
         if(tokenData[tokenId].rentee != address(0)){
-                require(block.number > tokenData[tokenId].rentedAtBlock + rentedBlocks,
+                require(block.number > tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
                 "The renting period is not over yet to put it for renting again");
             }
         tokenData[tokenId].rentingPrice = _newPrice;
         tokenData[tokenId].isUpForRenting = true;
         tokenData[tokenId].rentee = address(0);//No one's rented it as of now
+        tokenData[tokenId].numberOfBlocksToRent = _numberofBlocksToRent;
         upForRentingTokens.add(tokenId);
         emit TokenForRenting(_newPrice, tokenData[tokenId].isbn, tokenId);
     }
@@ -293,12 +299,12 @@ contract prana is ERC721 {
         "You are not authorized to view this copy!");
         if(ownerOf(tokenId) == msg.sender){
             if(tokenData[tokenId].rentee != address(0)){
-                require(block.number > tokenData[tokenId].rentedAtBlock + rentedBlocks,
+                require(block.number > tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
                 "The renting period is not over yet for you to consume the content");
             }
         }
         else if(tokenData[tokenId].rentee == msg.sender){
-            require(block.number <= tokenData[tokenId].rentedAtBlock + rentedBlocks,
+            require(block.number <= tokenData[tokenId].rentedAtBlock + tokenData[tokenId].numberOfBlocksToRent,
             "Your rental period has expired");
         }
         return booksInfo[tokenData[tokenId].isbn].encryptedBookDataHash;
@@ -327,10 +333,10 @@ contract prana is ERC721 {
     }
     
     //split up from viewTokenDetails, specifically for renting. To avoid Stack Too Deep Error
-    function viewRentingTokenDetails(uint256 _tokenId) public view returns(uint256, string memory, uint256, uint256, uint256, bool) {
+    function viewRentingTokenDetails(uint256 _tokenId) public view returns(uint256, string memory, uint256, uint256, uint256, uint256, bool) {
         require(_exists(_tokenId), "Token doesn't  exist");
         return(tokenData[_tokenId].isbn, booksInfo[tokenData[_tokenId].isbn].unencryptedBookDetailsCID, tokenData[_tokenId].copyNumber,
-        tokenData[_tokenId].rentedAtBlock, tokenData[_tokenId].rentingPrice, tokenData[_tokenId].isUpForRenting);
+        tokenData[_tokenId].rentedAtBlock, tokenData[_tokenId].rentingPrice, tokenData[_tokenId].numberOfBlocksToRent, tokenData[_tokenId].isUpForRenting);
     }
 
     function numberofTokensForResale() public view returns(uint256){

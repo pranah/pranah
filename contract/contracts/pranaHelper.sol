@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity >=0.4.16 <0.8.0;
+pragma solidity >=0.4.16 <0.9.0;
 
 
 contract PranaInterface{
     function buyToken(uint256 tokenid, address _tokenRecipient) public payable{}
-    function  buyTokenAsTheSpecialBuyer(uint256 tokenid, address _tokenRecipient) public payable{}
 }
 
 contract pranaHelper {
