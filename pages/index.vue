@@ -18,7 +18,7 @@
              thereby making them unique to enable new behaviors for the readers and giving them more <br>freedom over the content they own.
            
               </p>
-              <p class = 'tag'>(MetaMask needs to be connected to Ropsten Test Network)</p>
+              <p class = 'tag'>(MetaMask needs to be connected to Goerli Test Network)</p>
       </div>
   </section>
 
