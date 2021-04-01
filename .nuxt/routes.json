@@ -3,24 +3,28 @@
     "name": "collector",
     "path": "/collector",
     "component": "/home/anomaly/Desktop/pranah/pages/collector.vue",
-    "chunkName": "pages/collector"
+    "chunkName": "pages/collector",
+    "_name": "_2c5267b7"
   },
   {
     "name": "publisher",
     "path": "/publisher",
     "component": "/home/anomaly/Desktop/pranah/pages/publisher.vue",
-    "chunkName": "pages/publisher"
+    "chunkName": "pages/publisher",
+    "_name": "_2d0424b4"
   },
   {
     "name": "readPage",
     "path": "/readPage",
     "component": "/home/anomaly/Desktop/pranah/pages/readPage.vue",
-    "chunkName": "pages/readPage"
+    "chunkName": "pages/readPage",
+    "_name": "_a3ec47ea"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/home/anomaly/Desktop/pranah/pages/index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_561b1b08"
   }
 ]

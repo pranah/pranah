@@ -27,6 +27,7 @@
             <v-row>
               <v-col cols="12">
                 <v-text-field v-model="rentingPeriod" label="Number of blocks" type="number" min = '0' required></v-text-field>
+                <!-- <p></p> -->
               </v-col>
             </v-row>
           </v-container>
@@ -65,6 +66,15 @@ export default {
             console.log(this.content.tokenId)
             this.putForRent({rentingPrice: this.rentingPrice, tokenId: this.content.tokenId, rentingPeriod: this.rentingPeriod})
         }
+        // blocks_into_time(i) {
+        //   var seconds = i*13;
+        //   var minutes = seconds/60;
+        //   if (minutes < 0) {
+        //     return()
+        //   }
+        //   var hour =  minutes/60;
+        //   var days = hours/24;
+        // }
     } 
 }
 </script>
