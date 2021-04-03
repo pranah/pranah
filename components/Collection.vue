@@ -207,7 +207,7 @@ a {  text-decoration: none}
 
 .boxContainer {
 
-  position: absolute;
+  position: relative;
   width: 80%;
 }
 
@@ -239,12 +239,12 @@ a {  text-decoration: none}
   
   transition: .5s ease;
   opacity: 0;
-  position: relative;
+  position:absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  align-items: center;
+  align-items:center;
 }
 
 .boxContainer:hover .image {
