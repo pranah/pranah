@@ -1,9 +1,9 @@
 <template>
 <div>
   <div v-if="currentAccount != null">
-  <MyProfile v-if="clickedAt == 0"/>
+  <MarketPlace v-if="clickedAt == 0"/>
   <Publisher v-else-if="clickedAt == 1"/>
-  <MarketPlace v-else-if="clickedAt == 2"/>
+  <MyProfile v-else-if="clickedAt == 2"/>
   <About v-else-if="clickedAt == 4"/>
   <ReadPage v-else-if="clickedAt == 5"/>
   </div>

@@ -1,5 +1,5 @@
 <template>
-<!-- <section class="container"> -->
+<section class="container">
   <v-col>
   <!-- <center><img class="logo-prana" height="40" @click="open = !open" src="~/static/pranalogofinal.svg" alt="logo"></center> -->
   
@@ -138,7 +138,7 @@
       </v-tab-item>
     </v-tabs-items>
     </v-col>  
-<!-- </section>       -->
+</section>      
 </template>
 
 <script>
@@ -203,6 +203,7 @@ a {  text-decoration: none}
 
 .container{
     background-color: #ECEFF1;
+    align-items: center;
 }
 
 .boxContainer {
