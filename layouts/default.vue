@@ -68,9 +68,9 @@
           <v-divider></v-divider>
           <v-list-item link @click="setClickedAt(0)">
             <v-list-item-icon>
-              <v-icon x-large color="navy">mdi-account-outline</v-icon>
+              <v-icon x-large color="navy">mdi-shopping</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>My Profile</v-list-item-title>
+            <v-list-item-title>Marketplace</v-list-item-title>
           </v-list-item>
           <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(1)">
@@ -82,9 +82,9 @@
           <v-divider></v-divider>
           <v-list-item link @click="setClickedAt(2)">
             <v-list-item-icon>
-              <v-icon x-large color="navy">mdi-shopping</v-icon>
+              <v-icon x-large color="navy">mdi-account-outline</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Marketplace</v-list-item-title>
+            <v-list-item-title>My Profile</v-list-item-title>
           </v-list-item>
           <!-- <v-divider></v-divider>
             <v-list-item link @click="setClickedAt(3)">

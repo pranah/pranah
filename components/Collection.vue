@@ -203,6 +203,7 @@ a {  text-decoration: none}
 
 .container{
     background-color: #ECEFF1;
+    align-items: center;
 }
 
 .boxContainer {
