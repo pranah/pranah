@@ -39,6 +39,6 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 
-## Live Demo
+## Demo
 
-Checkout the [live demo here.](https://pranah.on.fleek.co)
+Checkout the [demo here.](https://www.pranah.co)
